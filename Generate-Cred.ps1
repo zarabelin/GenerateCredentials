@@ -16,7 +16,7 @@
 
 .NOTES
     CREATE DATE:    2018-03-19
-    CREATE AUTHOR:  Zackery Schermer
+    CREATE AUTHOR:  Zackery Schwermer
     Dependencies:
         *Config Json
         *Password Json
@@ -39,12 +39,12 @@ param
 
 
 #Pulling Json config and converting it to an object.
-if ($PasswordJson) {$CustomerConfigJson = Get-Content -Raw -Path $ConfigJson | ConvertFrom-Json }
+if ($CustomerConfigJson) {$CustomerConfigJson = Get-Content -Raw -Path $ConfigJson | ConvertFrom-Json }
 #Pulling Json password config and converting it to an object.
 if ($PasswordJson) {$CustomerPasswordJson = Get-Content -Raw -Path $PasswordJson | ConvertFrom-Json}
 
 #Setting bin path.
-if ($PasswordJson) {
+if ($CustomerConfigJson) {
     $BinPath = $env:HOMEDRIVE + $CustomerConfigJson.BinDirectory
 }
 else {
